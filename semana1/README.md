@@ -251,7 +251,7 @@ Ao terminar, observe seu próprio código e tente identificar claramente:
 - onde a saída para o usuário é produzida
 
 # Entrega
-Entregue um diretório contendo os cinco exercícios em zip:
+Crie uma branch do Git e um PR contendo os cinco exercícios nesse formato:
 
 ```text
 atividade-rust/
@@ -261,6 +261,8 @@ atividade-rust/
 ├── interpretador/
 └── task-tracker/
 ```
+
+Dentro do seu diretório dessa semana.
 
 Cada projeto deve poder ser executado normalmente utilizando `cargo run`.
 Foque em:
