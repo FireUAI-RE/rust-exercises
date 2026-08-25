@@ -12,60 +12,30 @@ fn str_to_int_vec(entrada: &str) -> Vec<i32> {
 }
 
 fn qtd_valores(numeros: &Vec<i32>) -> i32 {
-    let mut qtd = 0;
-    // _ faz o comp ignorar. se coloca uma variável e nao usa, dá erro
-    for _ in numeros {
-        qtd += 1;
-    }
-    qtd
+    numeros.len() as i32
 }
 
 fn soma(numeros: &Vec<i32>) -> i32 {
-    let mut total = 0;
-    for &valor in numeros {
-        total += valor;
-    }
-    total
+    numeros.iter().sum()
 }
 
 fn menor_valor(numeros: &Vec<i32>) -> Option<i32> {
-    if numeros.is_empty() {
-        return None;
-    }
-
-    let mut menor = numeros[0];
-    for &valor in numeros {
-        if valor < menor {
-            menor = valor;
-        }
-    }
-    Some(menor)
+    numeros.iter().min()
 }
 
 fn maior_valor(numeros: &Vec<i32>) -> Option<i32> {
-    if numeros.is_empty() {
-        return None;
-    }
-
-    let mut maior = numeros[0];
-    for &valor in numeros {
-        if valor > maior {
-            maior = valor;
-        }
-    }
-    Some(maior)
+    numeros.iter().max()
 }
 
 fn media(numeros: &Vec<i32>) -> Option<f64> {
-    let qtd = qtd_valores(numeros);
-
-    if qtd == 0 {
+    if numero.is_empty {
         return None;
     }
 
-    let total = soma(numeros);
+    let mut soma = numeros.iter().sum()::<i32>();
+    let mut qtdValores = numeros.len();
 
-    Some(total as f64 / qtd as f64)
+    Some(soma as f64 / qtdValores as f64)
 }
 
 fn main() {
