@@ -1,17 +1,15 @@
-mod input;
 mod calculo;
+mod input;
 
-use input::*;
 use calculo::*;
-
-
+use input::*;
 
 fn main() {
     println!("Escreva uma lista de números inteiros!");
     let input = ler_input();
 
-    let numeros = match trata_input(input){
-        Ok(numbers) =>  numbers,
+    let numeros = match trata_input(input) {
+        Ok(numbers) => numbers,
         Err(e) => {
             println!("Erro: {}", e);
             return;
@@ -19,15 +17,18 @@ fn main() {
     };
 
     println!("{:?}", numeros);
-    
+
     let quant = calcula_quantidade(&numeros);
     let soma = calcula_soma(&numeros);
-    let media: f32 = soma as f32/quant as f32;
+    let media: f32 = soma as f32 / quant as f32;
     let max_min: (i32, i32) = calcula_max_min(&numeros);
 
-    println!("Quantidade: {}
+    println!(
+        "Quantidade: {}
 Soma: {}
 Media: {}
 Minimo: {}
-Maximo: {}", quant, soma, media, max_min.1, max_min.0);
+Maximo: {}",
+        quant, soma, media, max_min.1, max_min.0
+    );
 }

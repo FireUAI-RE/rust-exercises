@@ -6,7 +6,7 @@ use std::io::ErrorKind;
 
 // abre arquivo, fazendo tratamento de erro
 pub fn get_file_content(f_name: String) -> Option<String> {
-    let content = match read_to_string(&f_name) {
+    match read_to_string(&f_name) {
         Ok(n) => Some(n),
         Err(error) => {
             match error.kind() {
@@ -15,8 +15,7 @@ pub fn get_file_content(f_name: String) -> Option<String> {
             }
             None
         }
-    };
-    return content;
+    }
 }
 
 pub fn get_args() -> String {

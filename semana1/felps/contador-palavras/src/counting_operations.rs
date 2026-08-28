@@ -37,7 +37,7 @@ pub fn get_most_frequent(word_list: &HashMap<String, i32>) -> (String, i32) {
 
 pub fn count_words(word_list: &HashMap<String, i32>) -> i32 {
     let mut word_count = 0;
-    for (_word, amount) in word_list {
+    for amount in word_list.values() {
         word_count += amount;
     }
     word_count
