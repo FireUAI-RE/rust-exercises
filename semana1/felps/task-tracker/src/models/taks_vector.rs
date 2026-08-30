@@ -5,17 +5,17 @@ pub struct Tasks{
 }
 
 impl Tasks{
-  fn find_task_index(&self, id: u32) -> Option<usize>{
-    let mut i: u32 = 0;
+  fn find_task_index(&self, id: u32) -> Option<usize> {
+    let mut i: usize = 0;
 
-    for task in &self.tasks{
-      if task.id == id{
-        return Some(i as usize);
-      }
-      i +=1;
+    while i < self.tasks.len() {
+        if self.tasks[i].id == id {
+            return Some(i);
+        }
+        i += 1;
     }
     None
-  }
+}
 
   pub fn add(&mut self, descrip: String){
     let new_id = match self.tasks.last(){

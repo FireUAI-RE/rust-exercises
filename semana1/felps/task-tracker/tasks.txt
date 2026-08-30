@@ -1,2 +1,0 @@
-0|true|Trancar probabilidade
-1|false|Comprar um andador para a Natalia

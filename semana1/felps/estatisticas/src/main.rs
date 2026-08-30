@@ -16,8 +16,6 @@ fn main() {
         }
     };
 
-    println!("{:?}", numeros);
-
     let quant = calcula_quantidade(&numeros);
     let soma = calcula_soma(&numeros);
     let media: f32 = soma as f32 / quant as f32;

@@ -1,17 +1,18 @@
 use super::contador::Contador;
 
 pub fn procura_contador<'a>(
-    contadores: &'a mut Vec<Contador>,
+    contadores: &'a mut [Contador],
     nome: &str,
 ) -> Option<&'a mut Contador> {
     // uso de lifetime
     // entender melhor depois
-    for contador in contadores {
-        if nome == contador.nome {
-            return Some(contador);
+    let mut i = 0;
+    while i < contadores.len() {
+        if nome == contadores[i].nome {
+            return Some(&mut contadores[i]);
         }
+        i += 1;
     }
-
     None
 }
 

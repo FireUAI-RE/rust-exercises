@@ -20,10 +20,10 @@ impl Agenda {
 
     // pega o index do contato no vetor da agenda. Apenas para uso interno
     fn procura_index_contato(&self, nome: &str) -> Option<usize> {
-        let mut i: u64 = 0; 
-        for contato in &self.contatos {
-            if contato.get_nome().to_lowercase() == nome.to_lowercase() {
-                return Some(i as usize);
+        let mut i: usize = 0;
+        while i < self.contatos.len() {
+            if self.contatos[i].get_nome().to_lowercase() == nome.to_lowercase() {
+                return Some(i);
             }
             i += 1;
         }
