@@ -78,7 +78,9 @@ fn carregar_tarefas(caminho: &str) -> GerenciadorTarefas {
         if let Ok(linha) = resultado_linha {
             let partes: Vec<&str> = linha.splitn(3, '|').collect();
             if partes.len() == 3 {
-                if let (Ok(id), Ok(concluida)) = (partes[0].parse::<usize>(), partes[1].parse::<bool>()) {
+                if let (Ok(id), Ok(concluida)) =
+                    (partes[0].parse::<usize>(), partes[1].parse::<bool>())
+                {
                     gerenciador.tarefas.push(Tarefa {
                         id,
                         concluida,
@@ -101,7 +103,8 @@ fn salvar_tarefas(gerenciador: &GerenciadorTarefas, caminho: &str) -> Result<(),
 
     for tarefa in &gerenciador.tarefas {
         let linha = format!("{}|{}|{}\n", tarefa.id, tarefa.concluida, tarefa.descricao);
-        arquivo.write_all(linha.as_bytes())
+        arquivo
+            .write_all(linha.as_bytes())
             .map_err(|e| format!("erro ao escrever no arquivo: {}", e))?;
     }
     Ok(())
@@ -149,7 +152,9 @@ fn executar_cli() -> Result<(), String> {
             if args.len() < 3 {
                 return Err("falta o ID da tarefa".to_string());
             }
-            let id: usize = args[2].parse().map_err(|_| "ID deve ser um número válido.")?;
+            let id: usize = args[2]
+                .parse()
+                .map_err(|_| "ID deve ser um número válido.")?;
             if let Some(tarefa) = gerenciador.obter_tarefa(id) {
                 print_tarefa(tarefa);
             } else {
@@ -160,7 +165,9 @@ fn executar_cli() -> Result<(), String> {
             if args.len() < 3 {
                 return Err("Falta o ID da tarefa".to_string());
             }
-            let id: usize = args[2].parse().map_err(|_| "ID deve ser um número válido.")?;
+            let id: usize = args[2]
+                .parse()
+                .map_err(|_| "ID deve ser um número válido.")?;
             gerenciador.concluir(id)?;
             salvar_tarefas(&gerenciador, CAMINHO_ARQUIVO)?;
             println!("tarefa {} concluída!", id);
@@ -169,7 +176,9 @@ fn executar_cli() -> Result<(), String> {
             if args.len() < 3 {
                 return Err("falta o ID da tarefa.".to_string());
             }
-            let id: usize = args[2].parse().map_err(|_| "ID deve ser um número válido.")?;
+            let id: usize = args[2]
+                .parse()
+                .map_err(|_| "ID deve ser um número válido.")?;
             gerenciador.remover(id)?;
             salvar_tarefas(&gerenciador, CAMINHO_ARQUIVO)?;
             println!("tarefa {} removida!", id);
