@@ -204,11 +204,12 @@ Acontece que o mesmo não acontece para todos os tipos de uma linguagem. Por exe
 
 O resultado se parece mais com isso:
 
-[IMG1]
+<img width="455" height="465" alt="image" src="https://github.com/user-attachments/assets/63ac3edd-333a-4da6-a99d-21f4ec9bc65c" />
 
 E não isso:
 
-[IMG2]
+
+<img width="447" height="582" alt="image" src="https://github.com/user-attachments/assets/6362bfef-3fc4-47c3-acec-f96d143c578f" />
 
 Veja que, caso ao final do escopo ambas as referências para `String` se mantivessem, ambas tentariam liberar a memória e, por consequência, ocorreria um *double free*. Por isso, o compilador move o valor para `s2` e torna `s1` inválido, assim, recebemos esse erro:
 
