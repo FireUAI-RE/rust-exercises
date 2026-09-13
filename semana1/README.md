@@ -1,6 +1,6 @@
 # Rust - Conceitos Básicos
 
-Até hoje, a maiorida dos exercícios que vocês fizeram possuía código parcialmente pronto, funções a completar ou uma estrutura já definida. Nesta atividade, você receberá apenas a especificação de cada programa e vai precisar decidir como organizar o código. 
+Até hoje, a maioria dos exercícios que vocês fizeram possuía código parcialmente pronto, funções a completar ou uma estrutura já definida. Nesta atividade, você receberá apenas a especificação de cada programa e vai precisar decidir como organizar o código. 
 
 # Instruções Gerais
 
