@@ -1,6 +1,4 @@
 # Semana 3 - Structs e Enums
-Já usamos `structs` e `enums` na primeira atividade, mas agora é hora de tratar 
-
 Já usamos `structs` e `enums` na primeira atividade, mas agora é hora de tratar dessas duas estruturas separadamente. Em geral, o objetivo dessa semana é que vocês aprendam como modelar dados com `structs` e `enums`, entendam como o `match` obriga a tratar todos os casos e como `Option` substitui o `null` ([e como ele resolve um problema de um milhão de dólares](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)).
 
 ## Instruções Gerais
